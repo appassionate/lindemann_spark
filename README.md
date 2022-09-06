@@ -1,2 +1,2 @@
 # lindemann_spark
-chemical lindemann index using spark/pyspark.
+chemical lindemann index using spark(pyspark).

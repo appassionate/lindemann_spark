@@ -22,7 +22,7 @@ welford算法的并行化方式: 请参考:
 
 https://en.wikipedia.org/wiki/Algorithms_for_calculating_variance  关于parallel的部分。
 #### **MapReduce**:
-MapReduce: 是一种并行化的计算模式, 可以非常好的处理，目前在分布式数据处理上有广泛应用
+MapReduce: 是一种并行化的计算模式，目前在分布式数据处理上有广泛应用
 https://en.wikipedia.org/wiki/MapReduce
 
 ### **软件**:

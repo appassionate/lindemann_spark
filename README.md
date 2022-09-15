@@ -1,6 +1,6 @@
 ## pyspark并行化Lindemann指数的实现
 
-请查看resource/lindemann.ipynb
+请查看resource/lindemann_spark.ipynb
 
 ## 解决问题
 这个实现使用spark并行完成lindemann index的求解，旨在解决在目前遇到的 **原方法串行速度过慢**, **数据处理的不合理编排**，和**单机内存不足等问题**。 (性能方面有待测试)

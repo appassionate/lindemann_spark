@@ -1,6 +1,6 @@
 ## pyspark并行化Lindemann指数的实现
 
-请查看resource/lindemann_spark.ipynb
+请查看resource/lindemann.ipynb
 
 ## 解决问题
 这个实现使用spark并行完成lindemann index的求解，旨在解决在目前遇到的 **原方法串行速度过慢**, **数据处理的不合理编排**，和**单机内存不足等问题**。 (性能方面有待测试)
@@ -18,11 +18,12 @@
 例: mean[i] = (mean[i-1] *(i-1) + mean[i])/i
 在pandas处理结构化数据中有 df.expanding.mean() df.expanding.var() 也利用了welford算法完成滚动数值的求和。
 https://pandas.pydata.org/pandas-docs/version/0.17.0/generated/pandas.expanding_var.html
-welford算法的并行化方式: 请参考: 
+
+**welford算法的并行化**: 请参考: 
 
 https://en.wikipedia.org/wiki/Algorithms_for_calculating_variance  关于parallel的部分。
 #### **MapReduce**:
-MapReduce: 是一种并行化的计算模式，目前在分布式数据处理上有广泛应用
+MapReduce: 是一种并行化的计算模式, 可以非常好的处理，目前在分布式数据处理上有广泛应用
 https://en.wikipedia.org/wiki/MapReduce
 
 ### **软件**:
@@ -39,8 +40,15 @@ https://github.com/MDAnalysis/mdanalysis
 Python语言下的 处理多种format 化学轨迹的软件, 类似于现有一些大数据流处理框架的处理方式，他并不直接将数据结构化到内存中，而是获取文件中，时间帧对应的起始偏移量信息，将随机读取转换为顺序读取，避免直接载入到单机内存。
 
 
-### **UI SHORTCUT**: 
+### **RESULT SHORTCUT**: 
+简单的可视化 证明数据能复现 : )
 
+#### **lindemann index**
+![avatar](./imgs/lindemann.png)
+#### **running mean**
+![avatar](./imgs/running_mean.png)
+#### **running variance**
+![avatar](./imgs/running_var.png)
 
 
 
